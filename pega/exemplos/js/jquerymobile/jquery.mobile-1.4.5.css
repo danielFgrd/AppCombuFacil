@@ -4715,3 +4715,10 @@ html .ui-popup .ui-field-contain > label + .ui-flipswitch {
 	position: relative;/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
 	padding: .2em;
 }
+
+
+/* CSS Customizado*/
+.ui-content{
+	width: 95%;
+	margin: 20px auto;
+}

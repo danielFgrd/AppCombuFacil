@@ -2,7 +2,7 @@
 <html>
 <head>
 
-  <link rel="stylesheet" href="./js/jquerymobile/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="./js/jquerymobile/jquery.mobile-1.4.5.css">
   <script src="./js/jquery-2.2.4.min.js"></script>
   <script src="./js/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
 
@@ -15,7 +15,7 @@
          data-theme="b"
 	 data-position="left" data-display="overlay">      
     <a href=""> <p>Buscar Postos</p> </a>
-	  <a href=""> <p>Configurações</p> </a>
+	  <a href="#page-config"> <p>Configurações</p> </a>
 	  <a href=""> <p>Ajuda</p> </a>
 	  <a href=""> <p>Sair</p> </a>
       
@@ -37,7 +37,7 @@
 	 data-iconpos="notext">Menu</a>
     </div>
 
-    
+    <!--Page Inicial-->
     <div data-role="content">      
       <form name="" id="" class="" method="post" action="">
         <h1>Faça o Login ou Cadastre-se</h1>
@@ -53,35 +53,89 @@
       <h4>Notas de Rodape</h4>
     </div>
 
-  </div><!--Page -->
+  </div>
+  
+<!--Page Pós-LOGIN POSTO-->
+<div data-role="page" id="page-config">
+    <div data-role="header">
+      <h1>Topo Tela Pós Login posto</h1>
+    </div>
+    
+    <div data-role="main" class="ui-content pos-logon">
+      <a href="" class="ui-btn">Meus Dados</a>
+      <a href="#mudar-senha" class="ui-btn">Alterar Senha</a>
+      <a href="#preco-comb" class="ui-btn">Cadastrar / Alterar Preços</a>
+      <a href="" class="ui-btn">Bônus</a>
+    </div>
 
-  <div data-role="page" id="pageone">
+    <div data-role="footer">
+      <h1>Rodapé Tela Pós Login posto</h1>
+    </div>
+</div>
+
+<!--Page TROCAR SENHA POSTO/CLIENTE -->
+<div data-role="page" id="mudar-senha" class="mudar-senha">
   <div data-role="header">
-    <h1>Pagina 1</h1>
+    <h1>TOPO Pagina TROCAR SENHA POSTO/CLIENTE</h1>
   </div>
 
   <div data-role="main" class="ui-content">
-    <p>Esse link abaixo te leva pra pagina 2</p>
-    <a href="#pagetwo">Pagina2</a>
+    <form name="" class="" id="" action="" method="post">
+      <div class="block-senha">
+        <label>Nova Senha: </label>
+        <input type="password" name="" id="" class=""/>
+      </div>
+      <div class="block-senha">
+        <label>Confirmar Nova Senha: </label>
+        <input type="password" name="" id="" class=""/>
+      </div>
+      <div class="block-senha">
+        <a class="ui-btn">Alterar Senha</a>
+      </div>      
+    </form>
   </div>
 
   <div data-role="footer">
-    <h1>Footer Pg1</h1>
+    <h1>Footer Pagina TROCAR SENHA POSTO/CLIENTE</h1>
   </div>
-</div> 
+</div>
 
-<div data-role="page" id="pagetwo">
+<!--Page PREÇO COMBUSTIVEL -->
+<div data-role="page" id="preco-comb" class="preco-comb">
   <div data-role="header">
-    <h1>Pagina 2</h1>
+    <h1>TOPO Pagina Preço combustivel</h1>
   </div>
 
   <div data-role="main" class="ui-content">
-    <p>Já esse link te leva pra Pg1</p>
-    <a href="#pageone">Vai pra Página2</a>
+    <form name="" class="" id="" action="" method="post">
+      <div class="block-senha">
+        <label>Gasolina: </label>
+        <input type="text" name="" id="" class=""/>
+      </div>
+      <div class="block-senha">
+        <label>Alcool: </label>
+        <input type="text" name="" id="" class=""/>
+      </div>
+      <div class="block-senha">
+        <label>Diesel: </label>
+        <input type="text" name="" id="" class=""/>
+      </div>
+      <div class="block-senha">
+        <label>Gasolina Aditivada: </label>
+        <input type="text" name="" id="" class=""/>
+      </div>
+      <div class="block-senha">
+        <label>GNV: </label>
+        <input type="text" name="" id="" class=""/>
+      </div>
+      <div class="block-senha">
+        <a class="ui-btn">Cadastrar Preços</a>
+      </div>      
+    </form>
   </div>
 
   <div data-role="footer">
-    <h1>Footer pg2</h1>
+    <h1>Footer Pagina TROCAR SENHA POSTO/CLIENTE</h1>
   </div>
 </div> 
 
