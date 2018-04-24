@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" http-equiv="content-type" content="text/html">
+
+  <link rel="stylesheet" href="./js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
+  <script src="./js/jquery/jquery-3.3.1.js"></script>
+  <script src="./js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+
+</head>
+
+<body>
+<!--tela inicial-->
+<div data-role="page" data-title="Home" class="ui-content" id="principal" data-position="relative">
+<!--Painel esquerdo-->
+
+    <div data-role="panel"
+       id="painelDeMenuEsquerdoTI"
+       data-position="left" data-display="overlay">
+    <ul data-role="listview">
+    <li><a href="#preco-comb" data-transition="slide"> <p>Preço do combustivel</p> </a></li>
+    <li><a href="#mudar-senha" data-transition="slide"> <p>Alterar senha</p></a></li>
+    <li><a href="#page-config" data-transition="slide"> <p>Configurações</p></a></li>
+    <li><a href=""> <p>Ajuda</p> </a></li>
+    <li><a href=""> <p>Sair</p> </a></li>
+    </ul>
+    </div>
+
+    <!--Fim painel-->
+
+
+    <!-- CABEÇALHO---->
+  <div data-role="header" id="" class="ui-header ui-bar-inherit">
+    <a href="#painelDeMenuEsquerdoTI"
+       data-role="button" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse"
+       data-icon="bars"
+       data-iconpos="notext">Menu</a>
+    <h1>Combu Fácil</h1>
+      <!--
+           Icones
+           http://demos.jquerymobile.com/1.3.0-rc.1/docs/demos/widgets/icons/
+
+           Botoes
+           http://demos.jquerymobile.com/1.2.1/docs/buttons/buttons-icons.html
+        -->
+
+  </div>
+    <!--Fim cabeçalho-->
+
+
+
+
+  <div data-role="content" class="ui-content">
+    <form name="" id="" class="" method="post" action="">
+      <h1>Faça o Login ou Cadastre-se</h1>
+      <label>Email</label>
+      <input type="email" name="" id="" class=""/>
+      <label>Senha</label>
+      <input type="password" name="" id="" class=""/>
+
+      <input type="submit" name="" id="" class="ui-btn" value="Entrar"/>
+    </form>
+
+    <hr>
+    <div data-role="controlgroup" data-type="horizontal">
+      <a href="#cadastro-usuario" data-transition="slide" class="ui-btn">Cadastrar Usuario</a>
+      <a href="#cadastro-posto" data-transition="slide" class="ui-btn">Cadastrar Posto</a>
+      </div>
+  </div>
+
+
+  <div data-role="footer" data-position="fixed">
+    <h4>Notas de Rodape</h4>
+  </div>
+
+</div>
+
+<!--Page Pós-LOGIN POSTO-->
+<div data-role="page" data-title="Pós Login" id="page-config">
+
+    <div data-role="header" class="ui-header ui-bar-inherit">
+
+      <a href="#principal"
+      data-role="button" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse"
+      data-direction="reverse"
+      class="ui-btn ui-icon-arrow-l ui-btn-icon-left"
+      data-iconpos="notext" data-transition="slide">Votar</a>
+      <h1>Topo Tela Pós Login posto</h1>
+    </div>
+
+
+    <div data-role="content" class="ui-content pos-logon">
+      <a href="" class="ui-btn">Meus Dados</a>
+      <a href="#mudar-senha" data-transition="slide" class="ui-btn">Alterar Senha</a>
+      <a href="#preco-comb" class="ui-btn" data-transition="slide">Cadastrar / Alterar Preços</a>
+      <a href="" data-transition="slide" class="ui-btn">Bônus</a>
+    </div>
+
+    <div data-role="footer">
+      <h1>Rodapé Tela Pós Login posto</h1>
+    </div>
+</div>
+
+<!--Page TROCAR SENHA POSTO/CLIENTE -->
+<div data-role="page" id="mudar-senha" class="mudar-senha">
+
+  <div data-role="header">
+    <a href="#principal"
+    data-role="button" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse"
+    class="ui-btn ui-icon-arrow-l ui-btn-icon-left"
+    data-iconpos="notext">Tela inicial</a>
+    <h1>TOPO Pagina TROCAR SENHA POSTO/CLIENTE</h1>
+  </div>
+
+  <div data-role="content" class="ui-content">
+
+
+        <form name="" class="" id="" action="" method="post">
+          <div class="block-senha">
+            <label>Nova Senha: </label>
+            <input type="password" name="" id="" class=""/>
+          </div>
+          <div class="block-senha">
+            <label>Confirmar Nova Senha: </label>
+            <input type="password" name="" id="" class=""/>
+          </div>
+          <div class="block-senha">
+            <a class="ui-btn">Alterar Senha</a>
+          </div>
+        </form>
+
+
+    </div>
+
+    <div data-role="footer">
+      <h1>Footer Pagina TROCAR SENHA POSTO/CLIENTE</h1>
+    </div>
+
+</div>
+
+<!--Page PREÇO COMBUSTIVEL -->
+<div data-role="page" data-title="Preço do combustível" id="preco-comb" class="preco-comb">
+
+  <div data-role="header" class="ui-bar-inherit ui-header">
+    <a href="#page-config"
+    data-role="button" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse"
+    class="ui-btn ui-icon-arrow-l ui-btn-icon-left"
+    data-iconpos="notext">Tela inicial</a>
+    <h1>TOPO Pagina Preço combustivel</h1>
+  </div>
+
+    <div data-role="content" class="ui-content">
+      <form name="" class="" id="" action="" method="post">
+        <div class="block-senha">
+          <label>Gasolina: </label>
+          <input type="text" name="" id="" class=""/>
+        </div>
+        <div class="block-senha">
+          <label>Alcool: </label>
+          <input type="text" name="" id="" class=""/>
+        </div>
+        <div class="block-senha">
+          <label>Diesel: </label>
+          <input type="text" name="" id="" class=""/>
+        </div>
+        <div class="block-senha">
+          <label>Gasolina Aditivada: </label>
+          <input type="text" name="" id="" class=""/>
+        </div>
+        <div class="block-senha">
+          <label>GNV: </label>
+          <input type="text" name="" id="" class=""/>
+        </div>
+        <div class="block-senha">
+          <a class="ui-btn">Cadastrar Preços</a>
+        </div>
+      </form>
+  </div>
+</div>
+  <div data-role="footer">
+    <h1>Footer Pagina TROCAR SENHA POSTO/CLIENTE</h1>
+  </div>
+</div>
+
+<!--Tela de cadastro-->
+<div data-role="page" data-title="Cadastro do usuario" class="ui-content" id="cadastro-usuario">
+
+     <div data-role="header" class="ui-header ui-bar-inherit">
+              <h1> Cadastro de Usuario</h1>
+       <a href="#principal"
+       data-role="button" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse"
+       class="ui-btn ui-icon-arrow-l ui-btn-icon-left"
+       data-iconpos="notext">Tela inicial</a>
+
+       </div>
+     <div data-role="content" class="ui-content">
+       <form action="" method="POST">
+          <label>Nome:</label>
+          <input type="text" name="txtNome">
+          <label>Sobre nome:</label>
+          <input type="text" name="txtSobreNome">
+          <label>Email:</label>
+          <input type="text" name="txtEmail">
+          <label>CPF:</label>
+          <input type="text" name="txtCpf">
+          <hx>
+          <label>Senha</label>
+          <input type="password" name="txtSenha">
+          <label>Confirmar senha</label>
+          <input type="password" name="txtConSenha">
+          <input type="submit" class="ui-btn" value="cadastrar">
+        </form>
+
+      </div>
+</div>
+
+
+<!-- Cadastro de POSTO -->
+<div data-role="page" data-title="Cadastro de Posto" class="ui-content" id="cadastro-posto">
+
+    <div data-role="header" class="ui-header ui-bar-inherit">
+      <a href="#principal"
+      data-role="button" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse"
+      class="ui-btn ui-icon-arrow-l ui-btn-icon-left"
+      data-iconpos="notext">Tela inicial</a>
+      <h1>Cadastro de Posto</h1>
+    </div>
+
+    <div data-role="content">
+      <form action="" method="POST">
+        <label>Razão social:</label>
+        <input type="text" name="txtRazSocial">
+        <label>Nome fantasia:</label>
+        <input type="text" name="txtNonFatasia">
+        <label>CNPJ:</label>
+        <input type="text" name="txtCnpj">
+        <label>Endereço:</label>
+        <input type="text" name="txtEndereco">
+        <label>CEP:</label>
+        <input type="text" name="txtCep">
+        <label>Bairro:</label>
+        <input type="text" name="txtBairro">
+        <label>Cidade:</label>
+        <input type="text" name="txtCidade">
+        <label>Estado:</label>
+        <input type="text" name="txtEstado">
+        <input type="submit" value="Cadastrar">
+      </form>
+    </div>
+  </div>
+
+
+</div>
+
+</body>
+</html>
+ 

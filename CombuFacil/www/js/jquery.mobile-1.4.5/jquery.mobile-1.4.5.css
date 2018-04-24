@@ -1464,6 +1464,7 @@ div.ui-mobile-viewport {
 	border-style: solid;
 	position: relative;
 }
+
 .ui-header:empty,
 .ui-footer:empty {
 	min-height: 15.6875em;
