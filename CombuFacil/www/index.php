@@ -172,7 +172,7 @@
       </div>
     </div>
     <!--Tela de cadastro-->
-    <div data-role="page" data-title="Cadastro do usuario" class="ui-content" id="cadastro-usuario">
+    <div data-role="page" data-title="Cadastro do usuario" id="cadastro-usuario">
      <div data-role="header" class="ui-header ui-bar-inherit">
                 <h1> Cadastro de Usuario</h1>
          <a href="#principal"
@@ -208,7 +208,7 @@
     </div>
 
     <!-- Cadastro de POSTO -->
-    <div data-role="page" data-title="Cadastro de Posto" class="ui-content" id="cadastro-posto">
+    <div data-role="page" data-title="Cadastro de Posto" id="cadastro-posto">
       <div data-role="header" class="ui-header ui-bar-inherit">
         <a href="#principal"
           data-role="button" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse" data-transition="slide" data-direction="reverse"
