@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" content="width=device-width, initial-scale=1" name="viewport" >
-  <link rel="stylesheet" href="./js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport" >
+  <link rel="stylesheet" href="themes/theme.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="./js/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.css"/>
   <script src="./js/jquery/jquery-3.3.1.js"></script>
   <script src="./js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
 </head>
@@ -10,7 +13,7 @@
 <body>
   <div>
     <!--tela inicial-->
-    <div data-role="page" data-title="Home" id="principal">
+    <div data-role="page" data-theme="a" data-title="Home" id="principal">
       <!--Painel esquerdo-->
       <div data-role="panel"
          id="painelDeMenuEsquerdoTI"
@@ -34,18 +37,21 @@
       </div>
 
 
-      <div role="main" class="ui-content">
+      <div role="main" class="ui-content" data-theme="a">
         <form method="post" action="">
           <div data-role="fieldcontain">
           <fieldset data-role="formgroup">
             <legend data-role="title"><h2>Faça o Login ou Cadastre-se</h2></legend>
             <div data-role="formgroup">
               <label for="email-login">Email</label>
-              <input type="email" name="email-login" id="email-login" class="custom"/>
+              <input type="email" name="email-login" data-clear-btn="true"
+              placeholder="Digite o email de login." id="email-login" class="custom"/>
             </div>
             <div data-role="formgroup">
               <label for="senha-login">Senha</label>
-              <input type="password" name="senha-login" id="senha-login" class="custom"/>
+              <input type="password" placeholder="Digite a sua senha."
+              data-clear-btn="true"
+              name="senha-login" id="senha-login" class="custom"/>
             </div>
           </fieldset>
           <input type="submit" name="" id="" class="ui-btn" value="Entrar"/>
@@ -58,7 +64,7 @@
         </div>
       </div>
 
-      <div data-role="footer">
+      <div data-role="footer" data-theme="a">
         <h4>Notas de Rodape</h4>
       </div>
 
