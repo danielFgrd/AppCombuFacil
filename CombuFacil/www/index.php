@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport" >
-  <link rel="stylesheet" href="themes/theme.min.css" />
+  <link rel="stylesheet" href="themes/theme.css" />
 	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
   <link rel="stylesheet" href="./js/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.css"/>
   <script src="./js/jquery/jquery-3.3.1.js"></script>
@@ -12,19 +12,56 @@
 
 <body>
   <div>
+    <!-- ##############LOGIN -->
+    <div data-role="page" data-theme="a" data-title="Login" id="page-login">
+      <div data-role="header">
+        <img src="./img/logo1.png" id="logo-login">
+      </div>
+      <div role="main" data-thme="a" class="ui-content">
+
+        <div role="main" class="ui-content" data-theme="a">
+          <form method="post" action="">
+            <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+              <legend data-role="title"><h2>Faça o Login ou Cadastre-se</h2></legend>
+              <div data-role="formgroup">
+                <label for="email-login">Email</label>
+                <input type="email" name="email-login" data-clear-btn="true"
+                placeholder="Digite o email de login." id="email-login" class="custom"/>
+              </div>
+              <div data-role="formgroup">
+                <label for="senha-login">Senha</label>
+                <input type="password" placeholder="Digite a sua senha."
+                data-clear-btn="true"
+                name="senha-login" id="senha-login" class="custom"/>
+              </div>
+            </fieldset>
+            <input type="submit" name="" id="" class="ui-btn" value="Entrar"/>
+          </div>
+          </form>
+          <hr>
+          <div data-role="controlgroup" data-position="" data-type="horizontal">
+            <a href="#cadastro-usuario" data-transition="slide" class="ui-btn">Cadastrar Usuario</a>
+          </div>
+        </div>
+        <style>
+        #logo-login{width: 100%; }
+        /* #page-login{background-color: #000;} */
+        </style>
+      </div>
+      <div data-role="footer">
+      </div>
+    </div>
+
     <!--tela inicial-->
-    <div data-role="page" data-theme="a" data-title="Home" id="principal">
-      <!--Painel esquerdo-->
-      <div data-role="panel"
-         id="painelDeMenuEsquerdoTI"
-         data-position="left" data-display="overlay">
-        <ul data-role="listview">
-          <li><a href="#preco-comb" data-transition="slide"> <p>Preço do combustivel</p> </a></li>
-          <li><a href="#mudar-senha" data-transition="slide"> <p>Alterar senha</p></a></li>
-          <li><a href="#page-config" data-transition="slide"> <p>Configurações</p></a></li>
-          <li><a href=""> <p>Ajuda</p> </a></li>
-          <li><a href=""> <p>Sair</p> </a></li>
-        </ul>
+    <div data-role="page" data-theme="a" data-title="page-mapa" id="principal">
+      <div data-role="page" id="map-page" data-url="map-page">
+          <div data-role="header" data-theme="a">
+          <h1>Maps</h1>
+          </div>
+          <div role="main" class="ui-content" id="map-canvas">
+              <!-- map loads here... -->
+          </div>
       </div>
       <!--Fim painel-->
       <!-- CABEÇALHO---->
@@ -37,10 +74,10 @@
       </div>
 
 
-      <div role="main" class="ui-content" data-theme="a">
+      <!-- <div role="main" class="ui-content" data-theme="a">
         <form method="post" action="">
           <div data-role="fieldcontain">
-          <fieldset data-role="formgroup">
+          <fieldset data-role="controlgroup">
             <legend data-role="title"><h2>Faça o Login ou Cadastre-se</h2></legend>
             <div data-role="formgroup">
               <label for="email-login">Email</label>
@@ -58,11 +95,11 @@
         </div>
         </form>
         <hr>
-        <div data-role="controlgroup" data-type="horizontal">
+        <div data-role="controlgroup" data-position="" data-type="horizontal">
           <a href="#cadastro-usuario" data-transition="slide" class="ui-btn">Cadastrar Usuario</a>
           <a href="#cadastro-posto" data-transition="slide" class="ui-btn">Cadastrar Posto</a>
         </div>
-      </div>
+      </div> -->
 
       <div data-role="footer" data-theme="a">
         <h4>Notas de Rodape</h4>
