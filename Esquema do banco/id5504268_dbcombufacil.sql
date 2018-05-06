@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: 02-Maio-2018 às 20:48
+-- Generation Time: 06-Maio-2018 às 01:28
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.0.26
 
@@ -23,6 +23,22 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `id5504268_dbcombufacil` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `id5504268_dbcombufacil`;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tbCliente`
+--
+
+CREATE TABLE `tbCliente` (
+  `idUsuario` int(10) UNSIGNED NOT NULL,
+  `idPoliticaAcesso` int(10) UNSIGNED DEFAULT NULL,
+  `usuNome` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `usuSobrenome` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `usuEmail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `usuCpf` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `usuSenha` varchar(40) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -73,36 +89,12 @@ CREATE TABLE `tbPostoAbastecimento` (
   `posBairro` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `posNumero` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   `posCep` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `posBadeira` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `idLocalMaps` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tbTituloPosto`
---
-
-CREATE TABLE `tbTituloPosto` (
-  `idTituloPosto` int(10) UNSIGNED NOT NULL,
-  `idPosto` int(10) UNSIGNED NOT NULL,
-  `idUsuario` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tbUsuario`
---
-
-CREATE TABLE `tbUsuario` (
-  `idUsuario` int(10) UNSIGNED NOT NULL,
+  `idLocalMaps` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `idPoliticaAcesso` int(10) UNSIGNED DEFAULT NULL,
-  `usuNome` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `usuSobrenome` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `usuEmail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `usuCpf` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `usuSenha` varchar(40) COLLATE utf8_unicode_ci NOT NULL
+  `posRazaoSocial` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `posNomeFantasia` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `posEmail` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `posSenha` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -114,13 +106,20 @@ CREATE TABLE `tbUsuario` (
 CREATE TABLE `tbVenda` (
   `idVenda` int(10) UNSIGNED NOT NULL,
   `idPosto` int(10) UNSIGNED NOT NULL,
-  `idUsuario` int(10) UNSIGNED NOT NULL,
+  `idCliente` int(10) UNSIGNED NOT NULL,
   `venDataHora` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tbCliente`
+--
+ALTER TABLE `tbCliente`
+  ADD PRIMARY KEY (`idUsuario`),
+  ADD KEY `idPoliticaAcesso` (`idPoliticaAcesso`);
 
 --
 -- Indexes for table `tbCombustivelDisponivel`
@@ -146,21 +145,7 @@ ALTER TABLE `tbPoliticaAcesso`
 -- Indexes for table `tbPostoAbastecimento`
 --
 ALTER TABLE `tbPostoAbastecimento`
-  ADD PRIMARY KEY (`idPostoAbastecimento`);
-
---
--- Indexes for table `tbTituloPosto`
---
-ALTER TABLE `tbTituloPosto`
-  ADD PRIMARY KEY (`idTituloPosto`),
-  ADD KEY `idPosto` (`idPosto`),
-  ADD KEY `idUsuario` (`idUsuario`);
-
---
--- Indexes for table `tbUsuario`
---
-ALTER TABLE `tbUsuario`
-  ADD PRIMARY KEY (`idUsuario`),
+  ADD PRIMARY KEY (`idPostoAbastecimento`),
   ADD KEY `idPoliticaAcesso` (`idPoliticaAcesso`);
 
 --
@@ -169,11 +154,17 @@ ALTER TABLE `tbUsuario`
 ALTER TABLE `tbVenda`
   ADD PRIMARY KEY (`idVenda`),
   ADD KEY `idPosto` (`idPosto`),
-  ADD KEY `idUsuario` (`idUsuario`);
+  ADD KEY `idCliente` (`idCliente`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `tbCliente`
+--
+ALTER TABLE `tbCliente`
+  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbCombustivelDisponivel`
@@ -200,18 +191,6 @@ ALTER TABLE `tbPostoAbastecimento`
   MODIFY `idPostoAbastecimento` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tbTituloPosto`
---
-ALTER TABLE `tbTituloPosto`
-  MODIFY `idTituloPosto` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbUsuario`
---
-ALTER TABLE `tbUsuario`
-  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `tbVenda`
 --
 ALTER TABLE `tbVenda`
@@ -222,6 +201,12 @@ ALTER TABLE `tbVenda`
 --
 
 --
+-- Limitadores para a tabela `tbCliente`
+--
+ALTER TABLE `tbCliente`
+  ADD CONSTRAINT `tbCliente_ibfk_1` FOREIGN KEY (`idPoliticaAcesso`) REFERENCES `tbPoliticaAcesso` (`idPoliticaAcesso`);
+
+--
 -- Limitadores para a tabela `tbCombustivelDisponivel`
 --
 ALTER TABLE `tbCombustivelDisponivel`
@@ -229,24 +214,17 @@ ALTER TABLE `tbCombustivelDisponivel`
   ADD CONSTRAINT `tbCombustivelDisponivel_ibfk_2` FOREIGN KEY (`idPosto`) REFERENCES `tbPostoAbastecimento` (`idPostoAbastecimento`);
 
 --
--- Limitadores para a tabela `tbTituloPosto`
+-- Limitadores para a tabela `tbPostoAbastecimento`
 --
-ALTER TABLE `tbTituloPosto`
-  ADD CONSTRAINT `tbTituloPosto_ibfk_1` FOREIGN KEY (`idPosto`) REFERENCES `tbPostoAbastecimento` (`idPostoAbastecimento`),
-  ADD CONSTRAINT `tbTituloPosto_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `tbUsuario` (`idUsuario`);
-
---
--- Limitadores para a tabela `tbUsuario`
---
-ALTER TABLE `tbUsuario`
-  ADD CONSTRAINT `tbUsuario_ibfk_1` FOREIGN KEY (`idPoliticaAcesso`) REFERENCES `tbPoliticaAcesso` (`idPoliticaAcesso`);
+ALTER TABLE `tbPostoAbastecimento`
+  ADD CONSTRAINT `tbPostoAbastecimento_ibfk_1` FOREIGN KEY (`idPoliticaAcesso`) REFERENCES `tbPoliticaAcesso` (`idPoliticaAcesso`);
 
 --
 -- Limitadores para a tabela `tbVenda`
 --
 ALTER TABLE `tbVenda`
   ADD CONSTRAINT `tbVenda_ibfk_1` FOREIGN KEY (`idPosto`) REFERENCES `tbPostoAbastecimento` (`idPostoAbastecimento`),
-  ADD CONSTRAINT `tbVenda_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `tbUsuario` (`idUsuario`);
+  ADD CONSTRAINT `tbVenda_ibfk_2` FOREIGN KEY (`idCliente`) REFERENCES `tbCliente` (`idUsuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
